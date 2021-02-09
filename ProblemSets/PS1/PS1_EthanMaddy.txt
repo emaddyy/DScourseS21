@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{PS1}
+\author{ethanmaddy }
+\date{February 2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+To say I have a lot of interests would be a gross understatement. 
+I have loved economics since high school, and that love hasn't diminished. 
+Having learned what I have through economics, I know that I will always be involved with the field. 
+I am interested in data science because of the uses it can have for finding solutions to complex problems. 
+I wanted to take this class because of how much I enjoyed econometrics. 
+I have not done any data analysis on food insecurity, so I hope to have my final project center around that. 
+I hope to gain a deeper understanding of data analysis and processes through this class. 
+After I graduate from OU, I plan on going to law school to become a public health lawyer.
+
+\section{Equation}
+\(a^2 + b^2 = c^2\)
+
+
+\end{document}
