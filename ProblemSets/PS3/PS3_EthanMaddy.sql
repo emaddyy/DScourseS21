@@ -5,7 +5,7 @@ CREATE TABLE datfl(policyID,statecode,county,eq_site_limit,hu_site_limit,
              point_latitude,point_longitude,line,construction,point_granularity);
 --step 2: read in dataset by setting file type
 .mode csv
--- then import the file
+-- import file
 .import DScourseS21/ProblemSets/PS3/FL_insurance_sample.csv datfl
 
 -- B: limit to show number of rows
@@ -16,8 +16,7 @@ SELECT DISTINCT county FROM datfl;
 
 --D: 'avg' function to compute average
 SELECT AVG (tiv_2012 - tiv_2011) FROM datfl;
---398118.229567354
+--398118.230
 
---E
---create a one-way frequency table to list amount of different categories
+--E: create one-way frequency table to list amount categories
 SELECT construction, COUNT(*) FROM datfl GROUP BY construction;
