@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{PS5\_Maddy}
+\author{ethanmaddy }
+\date{March 9, 2021}
+
+\usepackage{natbib}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 3}
+For this question, I choose to analyze the Global Hunger Index (GHI) from Wikipedia. In this wikitable, countries are ranked from 0 to 100, 0 being 'no hunger' and 100 be extremely severe hunger. This topic interests me for a variety of reasons: the variability, the impact on health, and overall progress in worldwide hunger efforts. I will likely use the data in the future for research in the health field. 
+
+\section{Question 4}
+For this question, I used the FRED API to analyze the unemployment rate in Oklahoma from 1990 through 2020. I found that the unemployment rate has been volatile since  1990 and has increased during recessions. In late 2000, the unemployment rate was under 3 percent, a shockingly low number. I used the fredr and tidyverse packages. 
+
+
+\end{document}
