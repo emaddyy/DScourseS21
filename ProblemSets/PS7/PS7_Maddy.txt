@@ -1,0 +1,148 @@
+% Fonts/languages
+\documentclass[12pt,english]{exam}
+\IfFileExists{lmodern.sty}{\usepackage{lmodern}}{}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{babel}
+\usepackage{mathpazo}
+%\usepackage{mathptmx}
+
+% Colors: see  http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{byublue}     {RGB}{0.  ,30. ,76. }
+\definecolor{deepred}     {RGB}{190.,0.  ,0.  }
+\definecolor{deeperred}   {RGB}{160.,0.  ,0.  }
+\newcommand{\textblue}[1]{\textcolor{byublue}{#1}}
+\newcommand{\textred}[1]{\textcolor{deeperred}{#1}}
+
+% Layout
+\usepackage{setspace} %singlespacing; onehalfspacing; doublespacing; setstretch{1.1}
+\setstretch{1.2}
+\usepackage[verbose,nomarginpar,margin=1in]{geometry} % Margins
+\setlength{\headheight}{15pt} % Sufficent room for headers
+\usepackage[bottom]{footmisc} % Forces footnotes on bottom
+
+% Headers/Footers
+\setlength{\headheight}{15pt}	
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\lhead{For-Profit Notes} \chead{} \rhead{\thepage}
+%\lfoot{} \cfoot{} \rfoot{}
+
+% Useful Packages
+%\usepackage{bookmark} % For speedier bookmarks
+\usepackage{amsthm}   % For detailed theorems
+\usepackage{amssymb}  % For fancy math symbols
+\usepackage{amsmath}  % For awesome equations/equation arrays
+\usepackage{array}    % For tubular tables
+\usepackage{longtable}% For long tables
+\usepackage[flushleft]{threeparttable} % For three-part tables
+\usepackage{multicol} % For multi-column cells
+\usepackage{graphicx} % For shiny pictures
+\usepackage{subfig}   % For sub-shiny pictures
+\usepackage{enumerate}% For cusomtizable lists
+\usepackage{pstricks,pst-node,pst-tree,pst-plot} % For trees
+
+% Bib
+\usepackage[authoryear]{natbib} % Bibliography
+\usepackage{url}                % Allows urls in bib
+
+% TOC
+\setcounter{tocdepth}{4}
+
+% Links
+\usepackage{hyperref}    % Always add hyperref (almost) last
+\hypersetup{colorlinks,breaklinks,citecolor=black,filecolor=black,linkcolor=byublue,urlcolor=blue,pdfstartview={FitH}}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\pagestyle{head}
+\firstpageheader{\textbf{\class\ - \term}}{\textbf{\examnum}}{\textbf{Due: Mar. 25\\ beginning of class}}
+\runningheader{\textbf{\class\ - \term}}{\textbf{\examnum}}{\textbf{Due: Mar. 25\\ beginning of class}}
+\runningheadrule
+
+\newcommand{\class}{Econ 5253}
+\newcommand{\term}{Spring 2021}
+\newcommand{\examdate}{Due: March 25, 2021}
+% \newcommand{\timelimit}{30 Minutes}
+
+\noprintanswers                         % Uncomment for no solutions version
+\newcommand{\examnum}{Problem Set 7}           % Uncomment for no solutions version
+% \printanswers                           % Uncomment for solutions version
+% \newcommand{\examnum}{Problem Set 7 - Solutions} % Uncomment for solutions version
+
+\usepackage[utf8]{inputenc}
+
+\title{PS7\_Maddy}
+\author{emaddyy}
+\date{March 25, 2021}
+
+\usepackage{natbib}
+\usepackage{booktabs}
+\usepackage{graphicx}
+
+\begin{document}
+
+\maketitle
+
+\section{Question 6}
+Log wages are missing at a rate of 25 percent. I think that logwage is Missing Not at Random (MNAR). Some may be unemployed, some may have forgotten to report their wage, others may be embarrassed of their wage. 
+
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lrrrrrrr}
+\toprule
+  & Unique (\#) & Missing (\%) & Mean & SD & Min & Median & Max\\
+\midrule
+logwage & 675 & 25 & 1.6 & 0.4 & 0.0 & 1.7 & 2.3\\
+hgc & 17 & 0 & 13.1 & 2.5 & 0.0 & 12.0 & 18.0\\
+tenure & 260 & 1 & 6.0 & 5.5 & 0.0 & 3.8 & 25.9\\
+age & 13 & 0 & 39.2 & 3.1 & 34.0 & 39.0 & 46.0\\
+logwage2 & 675 & 0 & 1.6 & 0.3 & 0.0 & 1.6 & 2.3\\
+logwage3 & 1226 & 0 & 1.7 & 0.4 & 0.0 & 1.7 & 2.3\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Question 7}
+As seen in the model summary, none of the models are close to the true $\hat{\beta}_1 = 0.093$. Models 1, 3, and 4 give the closest values to $\hat{\beta}_1$. Overall, the regression imputation models do a good job predicting $\hat{\beta}_1$ and the models  while mean imputation struggles to perform. 
+
+\begin{table}
+\centering
+\begin{tabular}[t]{lcccc}
+\toprule
+  & Model 1 & Model 2 & Model 3 & Model 4\\
+\midrule
+(Intercept) & 0.534 & 0.708 & 0.534 & 0.532\\
+ & (0.146) & (0.116) & (0.112) & (0.147)\\
+hgc & 0.062 & 0.050 & 0.062 & 0.062\\
+ & (0.005) & (0.004) & (0.004) & \vphantom{1} (0.005)\\
+as.factor(college)not college grad & 0.145 & 0.169 & 0.145 & 0.140\\
+ & (0.034) & (0.026) & (0.025) & (0.035)\\
+poly(tenure, 2, raw = T)1 & 0.050 & 0.038 & 0.050 & 0.050\\
+ & (0.005) & (0.004) & (0.004) & (0.005)\\
+poly(tenure, 2, raw = T)2 & -0.002 & -0.001 & -0.002 & -0.002\\
+ & (0.000) & (0.000) & (0.000) & (0.000)\\
+age & 0.000 & 0.000 & 0.000 & 0.001\\
+ & (0.003) & (0.002) & (0.002) & (0.003)\\
+as.factor(married)single & -0.022 & -0.027 & -0.022 & -0.025\\
+ & (0.018) & (0.014) & (0.013) & (0.018)\\
+\midrule
+Num.Obs. & 1669 & 2229 & 2229 & 1686\\
+Num.Imp. &  &  &  & 10\\
+R2 & 0.208 & 0.146 & 0.277 & 0.208\\
+R2 Adj. & 0.206 & 0.144 & 0.275 & 0.205\\
+AIC & 1179.9 & 1093.8 & 925.5 & \\
+BIC & 1223.2 & 1139.5 & 971.1 & \\
+Log.Lik. & -581.936 & -538.912 & -454.737 & \\
+F & 72.917 & 63.461 & 141.686 & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Question 8}
+For my project, I have yet had an opportunity to begin to compile my data. However, I am interested in using FIES (Food Insecurity Experience Scale) to analyze food insecurity and its effect on various national economies. While I have not quite figured out how I will do this, the RM.weights packages, the FIES website, and gapminder r package will all be potential paths to take in my analysis. 
+
+\end{document}
