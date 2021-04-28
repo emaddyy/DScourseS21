@@ -1,0 +1,222 @@
+\documentclass[12pt,english]{article}
+\usepackage{mathptmx}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0.,0.,139.}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[compact]{titlesec}
+\usepackage{ragged2e}
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lipsum}
+
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{pdflscape}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\linespread{2}
+
+\begin{document}
+
+\begin{singlespace}
+\title{Impact of Health Care Spending on Health Outcomes}
+\end{singlespace}
+
+\author{Ethan Maddy\thanks{Department of Economics, University of Oklahoma.\
+E-mail~address:~\href{mailto:ethanmaddy@ou.edu}{ethanmaddy@ou.edu}}}
+
+% \date{\today}
+\date{May 10, 2020}
+
+\maketitle
+
+\begin{abstract}
+\begin{singlespace}
+A fixed effects model to determine the impact, if any, health spending as a percent of Gross National Income (GNI) has on health outcomes. Data sourced for this research is from the World Bank’s Health Nutrition and Population Statistics DataBank. The data used in this research includes information from 259 unique countries from 2001-2020. Findings show that health spending has a significant impact on health outcomes, including death rate, life expectancy, and the prevalence of malnutrition. 
+\end{singlespace}
+
+\end{abstract}
+\vfill{}
+
+
+\pagebreak{}
+
+
+\section{Introduction}\label{sec:intro}
+Empirical evidence has been somewhat inconclusive about the strength of the connection between health care spending and health outcomes. This paper uses the Health Nutrition and Population Statistics data from the World Bank to model the correlation between health expenditure percent of Gross National Income (GNI) and death rate, incidence of HIV, life expectancy at birth, malnutrition prevalence, mortality from CVD, cancer, diabetes, or CRD, number of infant deaths, number of maternal deaths, number of people who are undernourished, and percent of the population that use at least basic sanitation services. 
+
+\section{Literature Review}\label{sec:litreview}
+In-depth analysis in final paper.
+
+\citet{Farag_2013}\\
+\citet{Hu_Mendoza_2013}\\
+\citet{Martin_Rice_Smith_2008}\\
+
+
+
+\section{Data}\label{sec:data}
+The data source for this research is the World Bank’s Health Nutrition and Population Statistics DataBank. The data used includes information from 259 unique countries from 2001-2020. 
+
+
+\section{Empirical Methods}\label{sec:methods}
+Unlike most econometric models, this research will explore how one independent variable, health care spending as a perfect of GNI, affects many dependent variables, health outcomes. The empirical model used is depicted by the equation below:
+
+\begin{equation}
+Y_{i} = \beta_{0} + \beta_{1} \times X_{1} + u
+\end{equation}
+Where $Y_{i}$ is a dependent health outcome variable and $X_{1}$ is health spending as a percent of GNI. The parameters of interest are $Y_{i}$. 9 different models are run with this equation. 
+
+\begin{center}
+$X_{1}$ = Health Spending percent of GNI\\
+$Y_{1}$ = Death Rate\\
+$Y_{2}$ = HIV\\
+$Y_{3}$ = Life Expectancy\\
+$Y_{4}$ = Malnutrition\\
+$Y_{5}$ = Mortality\\
+$Y_{6}$ = Infant Deaths\\
+$Y_{7}$ = Maternal Deaths\\
+$Y_{8}$ = Undernourished\\
+$Y_{9}$ = Sanitation\\
+\end{center}
+
+
+
+\section{Research Findings}\label{sec:results}
+TBD
+
+
+\section{Conclusion}\label{sec:conclusion}
+TBD
+
+\vfill
+\pagebreak{}
+\begin{spacing}{1.0}
+\bibliographystyle{jpe}
+\bibliography{References_Maddy.bib}
+\addcontentsline{toc}{section}{References}
+\end{spacing}
+
+\vfill
+\pagebreak{}
+\clearpage
+
+%========================================
+% FIGURES AND TABLES 
+%========================================
+\section*{Figures and Tables}\label{sec:figTables}
+\addcontentsline{toc}{section}{Figures and Tables}
+%----------------------------------------
+% Figure 1
+%----------------------------------------
+Placement for visualization -  not sure what to put here. 
+
+\vfill
+\pagebreak{}
+\clearpage
+
+\begin{table}
+\centering
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}}
+\small
+\caption{Health Spending on Y_{i}}
+\label{tab:9 Models} 
+\begin{tabular}[t]{lccc}
+\toprule
+  & Death Rate & HIV & Life Expectancy\\
+\midrule
+HealthSpendPCNT & -0.703 & 1.535 & -0.740\\
+ & (0.463) & (2.829) & (0.237)\\
+\midrule
+Num.Obs. & 638 & 864 & 3971\\
+R2 & 0.980 & 0.975 & 0.999\\
+R2 Adj. & 0.974 & 0.966 & 0.999\\
+R2 Within & 0.009 & 0.001 & 0.019\\
+R2 Pseudo &  &  & \\
+AIC & -263.5 & 2691.9 & -5382.7\\
+BIC & 481.1 & 3758.5 & -3842.4\\
+Log.Lik. & 298.728 & -1121.952 & 2936.352\\
+FE: `Country Name` & X & X & X\\
+FE: Year & X & X & X\\
+Std. errors & Clustered (`Country Name`) & Clustered (`Country Name`) & Clustered (`Country Name`)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}}
+\small
+\begin{tabular}[t]{lccc}
+\toprule
+  & Malnutrition & Mortality & Infant Deaths\\
+\midrule
+HealthSpendPCNT & -0.703 & 1.535 & -0.740\\
+ & (0.463) & (2.829) & (0.237)\\
+\midrule
+Num.Obs. & 638 & 864 & 3971\\
+R2 & 0.980 & 0.975 & 0.999\\
+R2 Adj. & 0.974 & 0.966 & 0.999\\
+R2 Within & 0.009 & 0.001 & 0.019\\
+R2 Pseudo &  &  & \\
+AIC & -263.5 & 2691.9 & -5382.7\\
+BIC & 481.1 & 3758.5 & -3842.4\\
+Log.Lik. & 298.728 & -1121.952 & 2936.352\\
+FE: `Country Name` & X & X & X\\
+FE: Year & X & X & X\\
+Std. errors & Clustered (`Country Name`) & Clustered (`Country Name`) & Clustered (`Country Name`)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}
+\centering
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\AtBeginDocument{
+  \setlength\abovedisplayskip{0pt}
+  \setlength\belowdisplayskip{0pt}}
+\small
+\begin{tabular}[t]{lccc}
+\toprule
+  & Maternal Deaths & Undernourished & Sanitation\\
+\midrule
+HealthSpendPCNT & -0.610 & -1.387 & 31.523\\
+ & (0.312) & (0.573) & (9.176)\\
+\midrule
+Num.Obs. & 3605 & 2548 & 3725\\
+R2 & 0.998 & 0.990 & 0.987\\
+R2 Adj. & 0.998 & 0.989 & 0.986\\
+R2 Within & 0.010 & 0.017 & 0.039\\
+R2 Pseudo &  &  & \\
+AIC & -3893.1 & 313.4 & 20129.1\\
+BIC & -2438.4 & 1330.0 & 21641.3\\
+Log.Lik. & 2181.536 & 17.322 & -9821.554\\
+FE: `Country Name` & X & X & X\\
+FE: Year & X & X & X\\
+Std. errors & Clustered (`Country Name`) & Clustered (`Country Name`) & Clustered (`Country Name`)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\end{document}
